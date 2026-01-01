@@ -8,7 +8,7 @@
 <?php
 // Asumsi file config.php ada di dalam folder 'admin'
 require_once 'admin/config.php';
-require_once 'koneksi.php';
+// require_once 'koneksi.php';
 
 $errors = [];
 $success_message = '';
