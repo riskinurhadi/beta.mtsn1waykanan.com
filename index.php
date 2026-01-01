@@ -371,7 +371,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Area untuk menampilkan poster/pengumuman -->
                     <div class="popup-content">
                         <!-- Opsi 1: Tampilkan poster/gambar saja (disarankan untuk poster) -->
-                        <img src="img/mtsn1logo.png" alt="Poster Pengumuman" class="img-fluid w-100" style="max-height: 70vh; object-fit: contain; display: block;">
+                        <!-- Ganti URL gambar di bawah dengan path poster/pengumuman Anda -->
+                        <img src="https://placehold.co/800x1000/198754/FFFFFF?text=Poster+Pengumuman+MTsN+1+Way+Kanan" alt="Poster Pengumuman" class="img-fluid w-100" style="max-height: 70vh; object-fit: contain; display: block;">
                         
                         <!-- Opsi 2: Tampilkan dengan teks tambahan (uncomment jika diperlukan) -->
                         <!--
@@ -1178,26 +1179,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <!-- Script untuk menampilkan popup poster/pengumuman -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Cek sessionStorage. Jika 'announcementPopupShown' belum ada, tampilkan popup.
-    if (!sessionStorage.getItem('announcementPopupShown')) {
-        // Inisialisasi modal Bootstrap
-        const announcementModal = new bootstrap.Modal(document.getElementById('announcementModal'), {
+// Fungsi untuk menampilkan popup
+function showAnnouncementModal() {
+    const modalElement = document.getElementById('announcementModal');
+    if (modalElement && typeof bootstrap !== 'undefined') {
+        const announcementModal = new bootstrap.Modal(modalElement, {
             backdrop: 'static',
             keyboard: false
         });
-        
-        // Tampilkan modal
         announcementModal.show();
-        
-        // Set item di sessionStorage agar popup tidak muncul lagi di sesi ini
-        sessionStorage.setItem('announcementPopupShown', 'true');
-        
-        // Event listener ketika modal ditutup
-        document.getElementById('announcementModal').addEventListener('hidden.bs.modal', function () {
-            // Bisa tambahkan action lain di sini jika diperlukan
-        });
     }
+}
+
+// Coba tampilkan popup setelah halaman selesai dimuat
+window.addEventListener('load', function() {
+    // Tunggu sedikit untuk memastikan Bootstrap sudah siap
+    setTimeout(showAnnouncementModal, 100);
 });
 </script>
 </body>
