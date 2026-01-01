@@ -6,9 +6,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Konfigurasi Database
 define('DB_HOST', 'localhost');
-define('DB_USER', 'mtsp7673_kartono');
+define('DB_USER', 'mtsn1wkbeta');
 define('DB_PASS', 'Aloevera21.');
-define('DB_NAME', 'mtsp7673_mtsn1wk');
+define('DB_NAME', 'mtsn1wkbeta');
 
 // Buat Koneksi
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
