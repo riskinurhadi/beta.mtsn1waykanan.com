@@ -1,0 +1,5 @@
+[25-Sep-2025 01:51:46 Asia/Jakarta] PHP Notice:  Undefined variable: result_pejabat in /home/mtsp7673/public_html/tampinganboja.com/index.php on line 934
+[25-Sep-2025 01:51:46 Asia/Jakarta] PHP Notice:  Undefined variable: hasil_berita_terkini in /home/mtsp7673/public_html/tampinganboja.com/index.php on line 1031
+[25-Sep-2025 01:51:46 Asia/Jakarta] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/mtsp7673/public_html/tampinganboja.com/index.php on line 1031
+[25-Sep-2025 01:52:06 Asia/Jakarta] PHP Fatal error:  Cannot redeclare buat_ringkasan() (previously declared in /home/mtsp7673/public_html/tampinganboja.com/index.php:6) in /home/mtsp7673/public_html/tampinganboja.com/index.php on line 1242
+[25-Sep-2025 01:52:08 Asia/Jakarta] PHP Fatal error:  Cannot redeclare buat_ringkasan() (previously declared in /home/mtsp7673/public_html/tampinganboja.com/index.php:6) in /home/mtsp7673/public_html/tampinganboja.com/index.php on line 1242

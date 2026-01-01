@@ -1,0 +1,243 @@
+/* =================================================================
+   ADMIN PANEL STYLESHEET - VERSI FINAL
+   ================================================================= */
+
+/* 1. Variabel Global */
+:root {
+    --primary-color: #28a745;
+    --primary-hover: #218838;
+    --sidebar-bg: #2c3e50;
+    --sidebar-text: #ecf0f1;
+    --sidebar-active: #34495e;
+    --main-bg: #f4f7f6;
+    --text-color: #333;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+    --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
+    --info-color: #3498db;
+    --info-hover: #2980b9;
+    --warning-color: #f39c12;
+    --secondary-color: #6c757d;
+    --border-color: #e0e0e0;
+}
+
+/* 2. Reset Dasar & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-bg);
+    display: flex; /* PENTING: Mengembalikan display flex untuk layout utama */
+}
+
+/* 3. Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--sidebar-active);
+    flex-shrink: 0;
+}
+
+.sidebar-header h3 {
+    font-weight: 600;
+    color: #fff;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    list-style: none;
+    padding: 20px 0;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background-color .3s ease;
+    font-size: 15px;
+    position: relative;
+}
+
+.sidebar-nav li a i {
+    width: 30px;
+    font-size: 18px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--sidebar-active);
+}
+
+/* PERUBAHAN: Style untuk menu aktif agar sesuai gambar */
+.sidebar-nav li.active > a {
+    background-color: var(--sidebar-active);
+    color: #fff;
+    font-weight: 500;
+}
+
+.sidebar-nav li.active > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+
+
+/* 4. Dropdown Sidebar */
+.sidebar-dropdown .dropdown-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #253545; /* Sedikit lebih gelap untuk menandakan submenu */
+}
+
+.sidebar-dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding-left: 65px;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 20px;
+    transition: transform .3s ease;
+}
+
+.sidebar-dropdown.open > a .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+
+/* 5. Konten Utama */
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 20px;
+    transition: all .3s ease;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* 6. Tabel Data */
+.table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.data-table th {
+    font-weight: 600;
+    background-color: #f9fafb;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.data-table tbody tr.pesan-baru td {
+    font-weight: 600;
+    color: #000;
+}
+
+/* 7. Tombol dan Badge */
+.btn-add, .btn-back, .btn-submit, .btn-action {
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color .3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.btn-add { background-color: var(--primary-color); }
+.btn-add:hover { background-color: var(--primary-hover); }
+
+.action-buttons { display: flex; gap: 8px; }
+.btn-edit { background-color: var(--warning-color); }
+.btn-delete { background-color: var(--danger-color); }
+.btn-view { background-color: var(--primary-color); }
+.btn-activate { background-color: var(--info-color); }
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.badge-aktif { background-color: var(--primary-color); }
+.badge-tidak-aktif { background-color: var(--secondary-color); }
+/* ... (class badge lainnya) ... */
+
+/* 8. Responsif */
+@media (max-width: 992px) {
+    .sidebar { width: 70px; }
+    .sidebar-header h3, .sidebar-nav li a span, .dropdown-icon { display: none; }
+    .main-content { margin-left: 70px; width: calc(100% - 70px); }
+    /* ... (CSS dropdown untuk mobile) ... */
+}

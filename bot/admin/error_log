@@ -1,0 +1,73 @@
+[03-Jul-2025 01:51:14 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:51:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/mtsp7673/public_html/admin/login.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:05 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/mtsp7673/public_html/admin/login.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:07 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/mtsp7673/public_html/admin/login.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:16 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 01:53:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/mtsp7673/public_html/admin/login.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/mtsp7673/public_html/admin/login.php on line 69
+[03-Jul-2025 02:11:24 Asia/Jakarta] PHP Warning:  move_uploaded_file(../uploads/galeri/galeri_6865845c7c3286.59689424.png): failed to open stream: No such file or directory in /home/mtsp7673/public_html/admin/tambah_galeri.php on line 59
+[03-Jul-2025 02:11:24 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpnMx7Rt' to '../uploads/galeri/galeri_6865845c7c3286.59689424.png' in /home/mtsp7673/public_html/admin/tambah_galeri.php on line 59
+[03-Jul-2025 02:57:09 Asia/Jakarta] PHP Warning:  require_once(../config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/admin/kelola_galeri.php on line 3
+[03-Jul-2025 02:57:09 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/admin/kelola_galeri.php on line 3
+[03-Jul-2025 03:28:43 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '/', expecting end of file in /home/mtsp7673/public_html/admin/index.php on line 12
+[03-Jul-2025 03:31:31 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:37 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:38 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:38 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:39 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:39 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:31:39 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:32:24 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:32:31 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:32:32 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:32:32 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:32:36 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 16
+[03-Jul-2025 03:34:53 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 17
+[03-Jul-2025 03:35:17 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 17
+[03-Jul-2025 03:37:39 Asia/Jakarta] PHP Notice:  Undefined index: foto_profil in /home/mtsp7673/public_html/admin/index.php on line 17
+[03-Jul-2025 03:59:31 Asia/Jakarta] PHP Warning:  require_once(../config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/admin/edit_galeri.php on line 2
+[03-Jul-2025 03:59:31 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/admin/edit_galeri.php on line 2
+[04-Jul-2025 18:53:15 Asia/Jakarta] PHP Warning:  require_once(../config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/admin/tambah_berita.php on line 2
+[04-Jul-2025 18:53:15 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/admin/tambah_berita.php on line 2
+[05-Jul-2025 20:34:38 Asia/Jakarta] PHP Notice:  Undefined variable: koneksi in /home/mtsp7673/public_html/admin/tambah_prestasi.php on line 10
+[05-Jul-2025 20:34:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/mtsp7673/public_html/admin/tambah_prestasi.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/mtsp7673/public_html/admin/tambah_prestasi.php on line 10
+[05-Jul-2025 20:39:14 Asia/Jakarta] PHP Notice:  Undefined variable: koneksi in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/mtsp7673/public_html/admin/config.php:21
+Stack trace:
+#0 /home/mtsp7673/public_html/admin/kelola_prestasi.php(3): require_once()
+#1 {main}
+  thrown in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:17 Asia/Jakarta] PHP Notice:  Undefined variable: koneksi in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/mtsp7673/public_html/admin/config.php:21
+Stack trace:
+#0 /home/mtsp7673/public_html/admin/edit_prestasi.php(2): require_once()
+#1 {main}
+  thrown in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:20 Asia/Jakarta] PHP Notice:  Undefined variable: koneksi in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/mtsp7673/public_html/admin/config.php:21
+Stack trace:
+#0 /home/mtsp7673/public_html/admin/edit_prestasi.php(2): require_once()
+#1 {main}
+  thrown in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:41 Asia/Jakarta] PHP Notice:  Undefined variable: koneksi in /home/mtsp7673/public_html/admin/config.php on line 21
+[05-Jul-2025 20:39:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/mtsp7673/public_html/admin/config.php:21
+Stack trace:
+#0 /home/mtsp7673/public_html/admin/index.php(3): require_once()
+#1 {main}
+  thrown in /home/mtsp7673/public_html/admin/config.php on line 21

@@ -1,0 +1,10 @@
+[15-Sep-2025 15:26:10 Asia/Jakarta] PHP Warning:  require_once(admin/config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/test/index.php on line 3
+[15-Sep-2025 15:26:10 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required 'admin/config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/test/index.php on line 3
+[19-Nov-2025 07:21:51 Asia/Jakarta] PHP Warning:  require_once(admin/config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/test/index.php on line 3
+[19-Nov-2025 07:21:51 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required 'admin/config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/test/index.php on line 3
+[19-Nov-2025 07:31:58 Asia/Jakarta] PHP Warning:  require_once(admin/config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/test/index.php on line 3
+[19-Nov-2025 07:31:58 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required 'admin/config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/test/index.php on line 3
+[20-Nov-2025 15:05:07 Asia/Jakarta] PHP Warning:  require_once(admin/config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/test/index.php on line 3
+[20-Nov-2025 15:05:07 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required 'admin/config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/test/index.php on line 3
+[20-Nov-2025 19:30:57 Asia/Jakarta] PHP Warning:  require_once(admin/config.php): failed to open stream: No such file or directory in /home/mtsp7673/public_html/test/index.php on line 3
+[20-Nov-2025 19:30:57 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required 'admin/config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/mtsp7673/public_html/test/index.php on line 3
