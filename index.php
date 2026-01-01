@@ -1068,35 +1068,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Efek scroll untuk Navbar
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
+        // --- KODE UNTUK NAVBAR SCROLL ---
+        const navbar = document.querySelector('.navbar');
+
+        // Fungsi untuk memperbarui tampilan navbar
+        function updateNavbar() {
+            if (!navbar) return;
+            
+            // Cek apakah layar adalah mobile (lebar di bawah 992px)
+            const isMobile = window.innerWidth < 992;
+            
+            // Cek apakah halaman sudah di-scroll
+            const isScrolled = window.scrollY > 50;
+
+            // Tambahkan class 'scrolled' jika di mobile ATAU jika sudah di-scroll
+            if (isMobile || isScrolled) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
+        }
 
-        // // Menampilkan SweetAlert2 saat halaman dimuat
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     Swal.fire({
-        //         title: 'Pemberitahuan',
-        //         text: 'Situs ini sedang dalam tahap pengembangan. Beberapa fitur mungkin belum berfungsi dengan sempurna.',
-        //         icon: 'info',
-        //         confirmButtonText: 'Baik, saya mengerti',
-        //         confirmButtonColor: '#10B981',
-        //         customClass: {
-        //             title: 'swal-title-custom',
-        //             popup: 'swal-popup-custom'
-        //         }
-        //     });
-        // });
+        // --- Event Listeners untuk Navbar ---
+        // Panggil fungsi saat halaman pertama kali dimuat
+        document.addEventListener('DOMContentLoaded', updateNavbar);
+        
+        // Panggil fungsi saat halaman di-scroll
+        window.addEventListener('scroll', updateNavbar);
+        
+        // Panggil fungsi saat ukuran jendela diubah (misal: rotasi HP)
+        window.addEventListener('resize', updateNavbar);
 
-        // --- KODE  UNTUK  NAVBAR MOBILE ---
+        // --- KODE UNTUK NAVBAR MOBILE ---
         document.addEventListener('click', function (event) {
             const navbarMenu = document.querySelector('#navbarNav');
-            const navbarToggler = document.querySelector('.navbar-toggler');
+            
+            if (!navbarMenu) return;
             
             // Periksa apakah menu sedang terbuka
             let isMenuOpen = navbarMenu.classList.contains('show');
@@ -1105,7 +1112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             let isClickOutside = !event.target.closest('.navbar');
 
             // Jika menu terbuka dan klik terjadi di luar, tutup menu
-            if (isMenuOpen && isClickOutside) {
+            if (isMenuOpen && isClickOutside && typeof bootstrap !== 'undefined') {
                 // Buat instance dari Collapse Bootstrap dan panggil method .hide()
                 let bsCollapse = new bootstrap.Collapse(navbarMenu, {
                     toggle: false
@@ -1113,36 +1120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 bsCollapse.hide();
             }
         });
-        
-        // Ambil elemen navbar
-    const navbar = document.querySelector('.navbar');
-
-    // Fungsi untuk memperbarui tampilan navbar
-    function updateNavbar() {
-        // Cek apakah layar adalah mobile (lebar di bawah 992px)
-        const isMobile = window.innerWidth < 992;
-        
-        // Cek apakah halaman sudah di-scroll
-        const isScrolled = window.scrollY > 50;
-
-        // Tambahkan class 'scrolled' jika di mobile ATAU jika sudah di-scroll
-        if (isMobile || isScrolled) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-
-    // --- Event Listeners ---
-
-    // Panggil fungsi saat halaman pertama kali dimuat
-    document.addEventListener('DOMContentLoaded', updateNavbar);
-    
-    // Panggil fungsi saat halaman di-scroll
-    window.addEventListener('scroll', updateNavbar);
-    
-    // Panggil fungsi saat ukuran jendela diubah (misal: rotasi HP)
-    window.addEventListener('resize', updateNavbar);
         
     
     // // Menampilkan SweetAlert2 saat halaman dimuat
@@ -1179,22 +1156,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <!-- Script untuk menampilkan popup poster/pengumuman -->
 <script>
-// Fungsi untuk menampilkan popup
-function showAnnouncementModal() {
-    const modalElement = document.getElementById('announcementModal');
-    if (modalElement && typeof bootstrap !== 'undefined') {
-        const announcementModal = new bootstrap.Modal(modalElement, {
-            backdrop: 'static',
-            keyboard: false
-        });
-        announcementModal.show();
-    }
-}
-
-// Coba tampilkan popup setelah halaman selesai dimuat
+// Script untuk popup modal - tampilkan setelah semua script dimuat
 window.addEventListener('load', function() {
-    // Tunggu sedikit untuk memastikan Bootstrap sudah siap
-    setTimeout(showAnnouncementModal, 100);
+    setTimeout(function() {
+        const modalElement = document.getElementById('announcementModal');
+        if (modalElement) {
+            // Pastikan Bootstrap sudah tersedia
+            if (typeof bootstrap !== 'undefined') {
+                const announcementModal = new bootstrap.Modal(modalElement, {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+                announcementModal.show();
+            } else {
+                // Fallback jika Bootstrap belum ready, coba lagi setelah 200ms
+                setTimeout(function() {
+                    if (typeof bootstrap !== 'undefined') {
+                        const announcementModal = new bootstrap.Modal(modalElement, {
+                            backdrop: 'static',
+                            keyboard: false
+                        });
+                        announcementModal.show();
+                    }
+                }, 200);
+            }
+        }
+    }, 300);
 });
 </script>
 </body>
