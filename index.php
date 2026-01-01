@@ -151,95 +151,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 /* =============================================
-   STYLE UNTUK POPUP SELAMAT DATANG (DIPERBAIKI)
+   STYLE UNTUK POPUP POSTER/PENGUMUMAN (BOOTSTRAP MODAL)
    ============================================= */
 
-.welcome-popup-overlay {
-    display: none; /* Sembunyikan secara default */
-    position: fixed;
-    z-index: 1060;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    
-    /* --- PERBAIKAN UTAMA --- */
-    /* Menggunakan flexbox untuk memusatkan konten */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px; /* Memberi jarak aman di layar kecil */
-    animation: fadeIn 0.5s ease-out;
+/* Styling khusus untuk modal popup poster/pengumuman */
+#announcementModal .modal-dialog {
+    max-width: 90%;
+    max-width: 800px;
+    margin: 1.75rem auto;
 }
 
-.welcome-popup-content {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 20px;
-    width: 100%; /* Lebar penuh agar responsif */
-    max-width: 500px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    animation: slideIn 0.5s ease-out;
-    /* --- PERBAIKAN: Menghapus margin auto --- */
-    /* margin: 15% auto; (Dihapus karena sudah diatur oleh flexbox) */
-}
-
-/* Animasi untuk latar belakang dan box */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes slideIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.welcome-popup-close {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-.welcome-popup-close:hover {
-    color: #333;
-}
-
-.welcome-popup-img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-}
-
-.welcome-popup-title {
-    font-weight: 700;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.welcome-popup-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 25px;
-    line-height: 1.7;
-}
-
-.welcome-popup-button {
-    font-weight: 600;
-    padding: 12px 40px;
-    border-radius: 50px;
-    font-size: 1rem;
-    background: linear-gradient(135deg, #28a745, #198754);
+#announcementModal .modal-content {
+    border-radius: 15px;
     border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+#announcementModal .modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+#announcementModal .modal-body {
+    padding: 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+#announcementModal .modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#announcementModal .modal-body .popup-content {
+    padding: 0;
+}
+
+#announcementModal .btn-close {
+    padding: 0.5rem;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    #announcementModal .modal-dialog {
+        max-width: 95%;
+        margin: 0.5rem auto;
+    }
+    
+    #announcementModal .modal-body .popup-content {
+        padding: 1rem;
+    }
 }
 
 
@@ -387,26 +351,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </header>
     
-    <!--POPUP-->
-    <div id="welcome-popup" class="welcome-popup-overlay">
-    <div class="welcome-popup-content">
-        <span class="welcome-popup-close" onclick="closeWelcomePopup()">&times;</span>
-        
-        <!-- Ganti dengan URL gambar yang relevan dengan madrasah -->
-        <img src="img/mtsn1logo.png" alt="Logo MTsN 1 Way Kanan" class="welcome-popup-img">
-        
-        
-        <h2 class="welcome-popup-title">Selamat Datang!</h2>
-        <p class="welcome-popup-text">
-            Terima kasih telah mengunjungi situs resmi MTs Negeri 1 Way Kanan.
-            Temukan informasi lengkap mengenai profil, program, dan prestasi madrasah kami.
-        </p>
-        <button onclick="closeWelcomePopup()" class="btn btn-success welcome-popup-button">
-            Jelajahi Situs
-        </button>
+    <!-- POPUP POSTER/PENGUMUMAN (BOOTSTRAP MODAL) -->
+    <!-- 
+        CATATAN UNTUK ADMIN:
+        Popup ini menggunakan Bootstrap Modal untuk menampilkan poster/pengumuman.
+        Untuk mengubah konten popup:
+        1. Untuk menampilkan poster/gambar saja: Ganti src gambar di bawah dengan path poster Anda
+        2. Untuk menampilkan pengumuman dengan teks: Edit bagian .popup-content di bawah
+        3. Untuk menyembunyikan header/footer: Tambahkan class d-none pada modal-header atau modal-footer
+    -->
+    <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="announcementModalLabel">Pengumuman</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- Area untuk menampilkan poster/pengumuman -->
+                    <div class="popup-content">
+                        <!-- Opsi 1: Tampilkan poster/gambar saja (disarankan untuk poster) -->
+                        <img src="img/mtsn1logo.png" alt="Poster Pengumuman" class="img-fluid w-100" style="max-height: 70vh; object-fit: contain; display: block;">
+                        
+                        <!-- Opsi 2: Tampilkan dengan teks tambahan (uncomment jika diperlukan) -->
+                        <!--
+                        <div class="p-4 text-center">
+                            <img src="img/mtsn1logo.png" alt="Poster Pengumuman" class="img-fluid mb-3" style="max-height: 400px; object-fit: contain;">
+                            <h4 class="mb-3">Judul Pengumuman</h4>
+                            <p class="text-muted">Isi pengumuman atau deskripsi poster di sini.</p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Mengerti</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-     <!--END POPUP-->
+    <!-- END POPUP POSTER/PENGUMUMAN -->
      
 <!--WhatsApp-->
 <section>
@@ -1193,23 +1176,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
     
+<!-- Script untuk menampilkan popup poster/pengumuman -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('welcome-popup');
-    
-    // Cek sessionStorage. Jika 'welcomePopupShown' belum ada, tampilkan popup.
-    if (!sessionStorage.getItem('welcomePopupShown')) {
-        popup.style.display = 'block';
-
-        // Set item di sessionStorage agar popup tidak muncul lagi di sesi ini.
-        sessionStorage.setItem('welcomePopupShown', 'true');
+    // Cek sessionStorage. Jika 'announcementPopupShown' belum ada, tampilkan popup.
+    if (!sessionStorage.getItem('announcementPopupShown')) {
+        // Inisialisasi modal Bootstrap
+        const announcementModal = new bootstrap.Modal(document.getElementById('announcementModal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        
+        // Tampilkan modal
+        announcementModal.show();
+        
+        // Set item di sessionStorage agar popup tidak muncul lagi di sesi ini
+        sessionStorage.setItem('announcementPopupShown', 'true');
+        
+        // Event listener ketika modal ditutup
+        document.getElementById('announcementModal').addEventListener('hidden.bs.modal', function () {
+            // Bisa tambahkan action lain di sini jika diperlukan
+        });
     }
 });
-
-// Fungsi untuk menutup popup
-function closeWelcomePopup() {
-    document.getElementById('welcome-popup').style.display = 'none';
-}
 </script>
 </body>
 </html>
